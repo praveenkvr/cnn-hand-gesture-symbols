@@ -38,9 +38,10 @@ def generate_images(name, grayscale=False, mode='training'):
 
         if key == ord('s'):
             crop = img[100:420, 100:420]
+            resized = cv2.resize(crop, (64, 64))
             pathlib.Path(
                 f'./data/{mode}/{name}').mkdir(parents=True, exist_ok=True)
-            cv2.imwrite(f'./data/{mode}/{name}/{count}.jpg', crop)
+            cv2.imwrite(f'./data/{mode}/{name}/{count}.jpg', resized)
             count += 1
         if key == ord('q'):
             break
