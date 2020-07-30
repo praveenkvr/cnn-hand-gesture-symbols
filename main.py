@@ -1,18 +1,18 @@
 import numpy as np
+from sklearn.metrics import confusion_matrix
 from tensorflow.keras.losses import categorical_crossentropy
 from matplotlib import pyplot as plt
 from util import plot_confusion_matrix
 
 from model import create_model
 from images_gen import get_test_generator, get_train_generator, get_classes
-from sklearn.metrics import confusion_matrix
 
 train_generator = get_train_generator()
 test_generator = get_test_generator()
 model = create_model(train_generator.num_classes)
 model.summary()
 model.compile(loss=categorical_crossentropy,
-              optimizer='adam',  metrics=['accuracy'])
+              optimizer='adam', metrics=['accuracy'])
 
 hist = model.fit(train_generator, steps_per_epoch=250 // 16, epochs=100,
                  verbose=2, validation_data=test_generator, validation_steps=1)

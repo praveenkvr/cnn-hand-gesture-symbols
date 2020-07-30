@@ -31,7 +31,8 @@ def get_train_generator():
     )
 
     return train_datagen.flow_from_directory(
-        training_path, target_size=(64, 64), class_mode='categorical', batch_size=16, shuffle=True, color_mode='grayscale')
+        training_path, target_size=(64, 64), class_mode='categorical',
+        batch_size=16, shuffle=True, color_mode='grayscale')
 
 
 def get_test_generator():

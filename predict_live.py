@@ -5,7 +5,6 @@ from images_gen import get_index_class_mapping, NUM_CLASSES
 from util import morph_image
 
 classes = get_index_class_mapping()
-print(classes)
 
 
 def predict_live(trained_model):
@@ -41,7 +40,6 @@ def predict_live(trained_model):
         result = result.argmax(axis=1)
 
         # update frame
-        print(f"result: {classes[result[0]]}")
         if has_true:
             cv2.putText(
                 frame, f"result: {classes[result[0]]}", (

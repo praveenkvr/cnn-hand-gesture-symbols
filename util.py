@@ -1,12 +1,13 @@
+import itertools
+
 import cv2
 import numpy as np
-import itertools
 from matplotlib import pyplot as plt
 
 
 def morph_image(frame):
     """
-    Source: https://stackoverflow.com/questions/60759031/computer-vision-creating-mask-of-hand-using-opencv-and-python
+    Source: https://stackoverflow.com/questions/60759031
 
     Masks the original image to a b&w image
     """
@@ -30,7 +31,7 @@ def plot_confusion_matrix(cm, classes, normalize=True, title='Confusion matrix')
     This function prints and plots the confusion matrix.
     Normalization can be applied by setting `normalize=True`.
     """
-    cmap = cm.get_cmap("Spectral")
+    cmap = plt.cm.get_cmap("Spectral")
     plt.figure(figsize=(10, 10))
 
     plt.imshow(cm, interpolation='nearest', cmap=cmap)
