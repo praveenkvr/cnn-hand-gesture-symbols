@@ -1,4 +1,4 @@
 env/
-data/
+data/training
 __pycache__/
 .DS_Store
