@@ -26,7 +26,7 @@ To capture images for training use the following command
 
 - images will be saved under data/{training|test}/{name}/{name}-1.jpg
 
-![Capture example](./capture_image.png)
+![Capture example](./capture_image.png =100x100)
 
 
 ## Data Generators
